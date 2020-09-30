@@ -1,0 +1,9 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    {{ form(form) }}
+    <a href="{{ path('admin.article.list') }}">Liste des articles</a>
+{% endblock %}
+
+{% block javascripts %}
+    {{ tinymce_init() }}
+{% endblock %}

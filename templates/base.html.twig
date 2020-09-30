@@ -29,6 +29,13 @@
         </div>
     </nav>
     <div class="container-fluid">
+        {% for label, messages in app.flashes %}
+            {% for message in messages %}
+                <div class="alert alert-{{ label }}" role="alert">
+                    <p>{{ message }}</p>
+                </div>
+            {% endfor %}
+        {% endfor %}
         {% block body %}{% endblock %}
     </div>
     <script src="/node_modules/jquery/dist/jquery.js"></script>

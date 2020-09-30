@@ -132,6 +132,9 @@
             "config/packages/sensio_framework_extra.yaml"
         ]
     },
+    "stfalcon/tinymce-bundle": {
+        "version": "v3.0.1"
+    },
     "symfony/asset": {
         "version": "v5.1.6"
     },

@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <h1>Liste des articles</h1>
+    <a href="{{ path('admin.article.create') }}">Créer un article</a>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Created At</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.createdAt|date('d/m/Y H:i:s') }}</td>
+                <td><a href="{{ path('admin.article.edit', {id: article.id}) }}">Edit</a> <a href="{{ path('admin.article.delete', {id: article.id}) }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
