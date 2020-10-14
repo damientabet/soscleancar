@@ -1,9 +1,28 @@
 {% extends "base.html.twig" %}
+
 {% block body %}
-    {{ form(form) }}
-    <a href="{{ path('admin.article.list') }}">Liste des articles</a>
+    <div class="container">
+        <a href="{{ path('admin.article.list') }}">Liste des articles</a>
+        {{ form(form) }}
+    </div>
 {% endblock %}
 
 {% block javascripts %}
-    {{ tinymce_init() }}
+    <script>
+        var content;
+       $.get("/articles_layout/{{ app.request.get('layout') }}.html", function(data){
+           content = data;
+       });
+
+        function callback_tinymce_init(editor) {
+            editor.insertContent(content)
+        }
+    </script>
+
+    {{ tinymce_init({
+        theme: {'simple':{'language': app.request.locale, 'height': 500 }},
+        toolbar: "insertfile undo redo",
+        automatic_uploads: true,
+        'use_callback_tinymce_init': true,
+    }) }}
 {% endblock %}

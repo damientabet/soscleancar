@@ -51,6 +51,7 @@ class AdminArticleController extends AbstractController
             $em->flush();
 
             $this->addFlash('success', 'L\'article a été bien été créé.');
+            return $this->redirectToRoute('admin.article.list');
         }
 
         return $this->render('admin/article/create.html.twig', [
