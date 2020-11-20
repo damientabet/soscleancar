@@ -1,0 +1,18 @@
+<!-- masterslider -->
+<div class="master-slider ms-skin-default" id="masterslider">
+    <!-- new slide -->
+    {% for slide in slides %}
+    <div class="ms-slide">
+        <!-- slide background -->
+        <img src="/img/slides/{{ slide.imgName }}" data-src="/img/slides/{{ slide.imgName }}" alt="lorem ipsum dolor sit"/>
+        <!-- slide text layer -->
+        <div class="ms-layer ms-caption" style="top:10px; left:30px;">
+            {{ slide.name }}
+        </div>
+        <!-- linked slide -->
+        <a href="http://codecanyon.net/user/averta">Averta</a>
+    </div>
+    {% endfor %}
+    <!-- end of slide -->
+</div>
+<!-- end of masterslider -->

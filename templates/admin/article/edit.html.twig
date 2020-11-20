@@ -1,9 +1,15 @@
 {% extends "base.html.twig" %}
 {% block body %}
-    {{ form(form) }}
-    <a href="{{ path('admin.article.list') }}">Liste des articles</a>
+    <div class="container">
+        <a href="{{ path('admin.article.list') }}">Liste des articles</a>
+        {{ form(form) }}
+    </div>
 {% endblock %}
 
 {% block javascripts %}
-    {{ tinymce_init() }}
+    {{ tinymce_init({
+        theme: {'simple':{'language': app.request.locale, 'height': 500 }},
+        toolbar: "insertfile undo redo",
+        automatic_uploads: true
+    }) }}
 {% endblock %}

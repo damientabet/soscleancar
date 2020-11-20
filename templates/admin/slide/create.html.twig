@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    <div class="container">
+        <a href="{{ path('admin.slide.list') }}">Liste des slides</a>
+        {{ form(form) }}
+    </div>
+{% endblock %}

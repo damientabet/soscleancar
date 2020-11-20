@@ -6,10 +6,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class AdminIndexController
+ * @package App\Controller\Admin
+ * @Route("/admin")
+ */
 class AdminIndexController extends AbstractController
 {
     /**
-     * @Route("/admin/", name="admin.index")
+     * @Route("/", name="admin.index")
      * @return Response
      */
     public function index()

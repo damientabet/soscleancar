@@ -1,4 +1,26 @@
 {% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/masterslider/style/masterslider.css">
+{% endblock %}
+
 {% block body %}
     <h1>Hello World</h1>
+
+    {% include 'slide.html.twig' %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/masterslider/masterslider.js"></script>
+    <script>
+        var slider = new MasterSlider();
+        slider.setup('masterslider', {
+            width: 1920,
+            height: 500,
+            space: 5,
+            autoplay: true,
+            arrows: true,
+            speed: 10,
+        });
+    </script>
 {% endblock %}

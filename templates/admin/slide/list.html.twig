@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.css">
+{% endblock %}
+{% block body %}
+    <h1>Liste des slides</h1>
+
+    <a href="{{ path('admin.slide.create') }}">Créer un slide</a>
+
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for slide in slides %}
+            <tr>
+                <td>{{ slide.id }}</td>
+                <td>{{ slide.name }}</td>
+                <td><a href="{{ path('admin.slide.edit', {id: slide.id}) }}">Edit</a> <a href="{{ path('admin.slide.delete', {id: slide.id}) }}">Delete</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
