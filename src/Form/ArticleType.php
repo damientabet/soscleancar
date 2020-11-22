@@ -18,7 +18,7 @@ class ArticleType extends AbstractType
             ->add('content', TextareaType::class, [
                 'attr' => ['class' => 'tinymce']
             ])
-            ->add('save', SubmitType::class, ['label' => 'Create Article'])
+            ->add('save', SubmitType::class, ['label' => 'Save'])
         ;
     }
 

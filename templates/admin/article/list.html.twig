@@ -1,32 +1,58 @@
-{% extends "base.html.twig" %}
-{% block stylesheets %}
-    <link rel="stylesheet" href="/node_modules/sweetalert2/dist/sweetalert2.css">
-{% endblock %}
-{% block body %}
-    <h1>Liste des articles</h1>
-    <button id="createArticle" class="btn btn-success">Créer un article</button>
+{% extends "admin/layout.html.twig" %}
 
-    <div class="container">
-        <table class="table table-bordered">
-            <thead>
-            <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Created At</th>
-                <th>Actions</th>
-            </tr>
-            </thead>
-            <tbody>
-            {% for article in articles %}
-            <tr>
-                <td>{{ article.id }}</td>
-                <td>{{ article.title }}</td>
-                <td>{{ article.createdAt|date('d/m/Y H:i:s') }}</td>
-                <td><a href="{{ path('admin.article.edit', {id: article.id}) }}">Edit</a> <a href="{{ path('admin.article.delete', {id: article.id}) }}">Delete</a></td>
-            </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+{% block body %}
+    <div class="container-fluid">
+        <div class="clearfix bg-white mb-4 p-3">
+            <div class="float-left">
+                <h1 class="h3 mb-2 text-gray-800">Liste des articles</h1>
+            </div>
+            <div class="float-right">
+                <button id="createArticle" class="btn btn-success">Créer un article</button>
+            </div>
+        </div>
+
+        <!-- Page Heading -->
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Title</th>
+                            <th>Created At</th>
+                            <th>Actions</th>
+                        </tr>
+                        </tfoot>
+                        <tbody>
+                        {% for article in articles %}
+                            <tr>
+                                <td>{{ article.id }}</td>
+                                <td>{{ article.title }}</td>
+                                <td>{{ article.createdAt|date('d/m/Y H:i:s') }}</td>
+                                <td><a href="{{ path('admin.article.edit', {id: article.id}) }}" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
+                                    <a href="{{ path('admin.article.delete', {id: article.id}) }}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a></td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
     </div>
 {% endblock %}
 
@@ -34,7 +60,7 @@
     <script src="/node_modules/sweetalert2/dist/sweetalert2.js"></script>
 
     <script>
-        $('#createArticle').on('click', function(){
+        $('#createArticle').on('click', function () {
             Swal.fire({
                 title: '<strong>Choose the layout</strong>',
                 html:

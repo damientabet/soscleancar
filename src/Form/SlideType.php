@@ -28,7 +28,7 @@ class SlideType extends AbstractType
                 'required' => false,
                 'empty_data' => '',
             ])
-            ->add('save', SubmitType::class, ['label' => 'Create Slide'])
+            ->add('save', SubmitType::class, ['label' => 'Save'])
         ;
     }
 
