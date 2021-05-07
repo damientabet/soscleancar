@@ -1,12 +1,82 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Protégez votre véhicule avec des protections céramiques et graphène">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global.css">
+
+    <link href="/node_modules/mmenu-js/dist/mmenu.css" rel="stylesheet" type="text/css">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="navbar navbar-expand-sm fixed-top navbar-dark {% if app.request.get('_route') == 'home' %}pt-lg-5 pl-lg-5{% endif %}">
+    <a class="navbar-brand" href="{{ path('home') }}">SOSCLEANCAR</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ path('home') }}">Accueil</a>
+            </li>
+            {% if categories is defined %}
+                {% for category in categories %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                            {{ category.name }}
+                        </a>
+                        <div class="dropdown-menu rounded-0 p-0 border-0 bg-dark" aria-labelledby="navbarDropdown">
+                            {% for article in category.getArticles() %}
+                                <a class="dropdown-item text-white" href="{{ path('article.index', {'id': article.id, 'slug': article.title}) }}">{{ article.title }}</a>
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </div>
+</div>
+<div class="{% if app.request.get('_route') != 'home' %}content{% endif %}">
+{% block body %}{% endblock %}
+</div>
+<div class="footer">
+    <div style="background-color: #191919; color: white">
+        <div class="container row m-auto p-5">
+            <div class="col-md-4">
+                <p class="text-uppercase">Coordonnées</p>
+                <p style="color: #555555">10 Rue des Dahlias <br/>68540 Bollwiller</p>
+                <hr style="background-color: white">
+                <p style="color: #555555">Tel : 06 11 03 10 03 <br/>E-mail : soscleancar@yahoo.com</p>
+            </div>
+            <div class="col-md-4">
+                <p class="text-uppercase">Réseaux sociaux</p>
+                <ul class="pl-0" style="list-style: none; color: #555555">
+                    <li>Facebook</li>
+                    <li>Instagram</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #111111">
+        <div class="container p-3" style="font-size: 13px">
+            <span style="color: #555555">www.soscleancar.com</span> - <a href="{{ path('contact') }}">Contact</a> - <a
+                    href="#">Mentions légales</a> - <a href="#">Politique de confidentialité</a>
+        </div>
+    </div>
+</div>
+<script src="/node_modules/jquery/dist/jquery.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+<script src="/node_modules/mmenu-js/dist/mmenu.js"></script>
+<script src="/node_modules/mmenu-js/dist/mmenu.polyfills.js"></script>
+<script src="/js/mmenu-js.config.js"></script>
+{% block javascripts %}{% endblock %}
+</body>
 </html>

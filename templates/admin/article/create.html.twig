@@ -1,0 +1,38 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block body %}
+    <div class="clearfix bg-white mb-4 p-3">
+        <div class="float-left">
+            <h1 class="h3 mb-2 text-gray-800">{{ 'Create article'|trans }}</h1>
+        </div>
+        <div class="float-right">
+            <a href="{{ path('admin.article.list') }}" class="btn btn-light btn-icon-split">
+                <span class="icon text-gray-600">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text">{{ 'Back to the list'|trans() }}</span>
+            </a>
+        </div>
+    </div>
+    {{ form(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        var content;
+       $.get("/articles_layout/{{ app.request.get('layout') }}.html", function(data){
+           content = data;
+       });
+
+        function callback_tinymce_init(editor) {
+            editor.insertContent(content)
+        }
+    </script>
+
+    {{ tinymce_init({
+        theme: {'simple':{'language': app.request.locale, 'height': 500 }},
+        toolbar: "insertfile undo redo",
+        automatic_uploads: true,
+        'use_callback_tinymce_init': true,
+    }) }}
+{% endblock %}
