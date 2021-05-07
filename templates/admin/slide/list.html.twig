@@ -4,16 +4,16 @@
     <div class="container-fluid">
         <div class="clearfix bg-white mb-4 p-3">
             <div class="float-left">
-                <h1 class="h3 mb-2 text-gray-800">Liste des slides</h1>
+                <h1 class="h3 mb-2 text-gray-800">{{ 'Slide list'|trans }}</h1>
             </div>
             <div class="float-right">
-                <a href="{{ path('admin.slide.create') }}" class="btn btn-success">Créer un slide</a>
+                <a href="{{ path('admin.slide.create') }}" class="btn btn-success">{{ 'Create slide'|trans }}</a>
             </div>
         </div>
 
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary">{{ 'DataTables Example'|trans }}</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -21,17 +21,17 @@
                         <thead>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Actions</th>
+                            <th>{{ 'Title'|trans }}</th>
+                            <th>{{ 'Image'|trans }}</th>
+                            <th>{{ 'Actions'|trans }}</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
                             <th>#</th>
-                            <th>Title</th>
-                            <th>Image</th>
-                            <th>Actions</th>
+                            <th>{{ 'Title'|trans }}</th>
+                            <th>{{ 'Image'|trans }}</th>
+                            <th>{{ 'Actions'|trans }}</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -39,7 +39,7 @@
                             <tr>
                                 <td>{{ slide.id }}</td>
                                 <td>{{ slide.name }}</td>
-                                <td><img src="/img/slides/{{ slide.imgName }}" alt="{{ slide.name }}" width="800" height="200"></td>
+                                <td><img src="/img/slides/{{ slide.imgName }}" alt="{{ slide.name }}" height="10%"></td>
                                 <td><a href="{{ path('admin.slide.edit', {id: slide.id}) }}" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
                                     <a href="{{ path('admin.slide.delete', {id: slide.id}) }}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a></td>
                             </tr>

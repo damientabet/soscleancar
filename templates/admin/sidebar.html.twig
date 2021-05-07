@@ -16,7 +16,7 @@
     <li class="nav-item active">
         <a class="nav-link" href="{{ path('admin.index') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
+            <span>{{ 'Dashboard'|trans() }}</span></a>
     </li>
 
     <!-- Divider -->
@@ -24,28 +24,54 @@
 
     <!-- Heading -->
     <div class="sidebar-heading">
-        Interface
+        {{ 'Interface'|trans() }}
     </div>
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ path('admin.article.list') }}">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Articles</span>
-        </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#article"
            aria-expanded="true" aria-controls="collapseTwo">
             <i class="fas fa-fw fa-cog"></i>
-            <span>Diaporama</span>
+            <span>{{ 'Articles'|trans() }}</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="article" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Custom Components:</h6>
-                <a class="collapse-item" href="{{ path('admin.slide.list') }}">Liste</a>
+                <a class="collapse-item" href="{{ path('admin.article.list') }}">{{ 'Articles'|trans() }}</a>
+                <a class="collapse-item" href="{{ path('admin.category.list') }}">{{ 'Categories'|trans() }}</a>
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#slideshow"
+           aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>{{ 'Slideshow'|trans() }}</span>
+        </a>
+        <div id="slideshow" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <a class="collapse-item" href="{{ path('admin.slide.list') }}">{{ 'List'|trans() }}</a>
+            </div>
+        </div>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        {{ 'Apparence'|trans() }}
+    </div>
+    <li class="nav-item">
+        <a class="nav-link" href="{{ path('admin.home.editor') }}">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>{{ 'Home editor'|trans()}}</span>
+        </a>
+    </li>
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+{#    <div class="sidebar-heading">#}
+{#        Administration#}
+{#    </div>#}
 </ul>
 <!-- End of Sidebar -->

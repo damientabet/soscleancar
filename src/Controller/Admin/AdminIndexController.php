@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * Class AdminIndexController
  * @package App\Controller\Admin
- * @Route("/admin")
+ * @Route("/{_locale}/admin", requirements={"_locale": "en|fr",})
  */
 class AdminIndexController extends AbstractController
 {

@@ -1,0 +1,139 @@
+.navbar {
+    background-color: #000;
+    transition: all 0.5s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #1d2124;
+}
+
+.view, body, html {
+    height: 100%
+}
+
+.images {
+    box-shadow: 5px 5px 20px #d3d3d3;
+    transition-duration: 300ms;
+    object-fit: cover;
+    border: #FFFFFF solid 4px;
+}
+
+.images:hover {
+    box-shadow: 5px 5px 30px #d3d3d3;
+    transition-duration: 300ms;
+}
+
+.reassurance:hover {
+    color: #997438;
+    cursor: pointer;
+}
+
+.reassurance img {
+    height: 80px;
+    width: 80px;
+}
+
+.block-container {
+    background-color: #1b1e21;
+    color: white;
+}
+
+.block-container .row div img {
+    height: 460px;
+    object-fit: cover;
+    left: 0;
+}
+
+.block-container__text {
+    padding: 70px;
+}
+
+.home-polissage__div-img {
+    margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #1C2331
+    }
+
+    .ms-layer-content {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .navbar {
+        /*background-color: #000!important;*/
+        z-index: 99;
+    }
+
+    .navbar a {
+        color: #ffffff;
+    }
+
+    .dropdown-menu {
+        background-color: #1b1e21;
+    }
+
+    .dropdown-menu a {
+        min-width: 250px;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu{ display: block; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0; }
+
+    .home-polissage {
+        padding-top: 50px;
+        padding-bottom: 100px;
+    }
+
+    .home-polissage__img {
+        width: 60%;
+        padding-bottom: 76.1904761904762%;
+    }
+
+    .home-polissage__img--2 {
+        max-width: 60%;
+        margin-top: -50%;
+    }
+    .home-polissage__img--1 {
+        position: relative;
+        max-width: 60%;
+        margin-left: auto;
+    }
+
+    .home-polissage__img img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        object-fit: cover;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .block-container .row div img {
+        height: 100%;
+    }
+
+    .block-container-two {
+        height: 100%;
+    }
+
+    .img-after {
+        left: 100px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .navbar {
+        z-index: 99;
+    }
+
+    .navbar a {
+        color: #ffffff;
+    }
+
+}

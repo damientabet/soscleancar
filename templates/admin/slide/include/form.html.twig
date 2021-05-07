@@ -1,0 +1,37 @@
+{{ form_start(form) }}
+<div class="row">
+    <div class="col-md-6">
+        <div class="jumbotron">
+            {{ form_label(form.name) }}
+            {{ form_widget(form.name) }}
+            {{ form_label(form.title) }}
+            {{ form_widget(form.title) }}
+            {{ form_label(form.description) }}
+            {{ form_widget(form.description) }}
+            {{ form_label(form.img_name) }}
+            <div>
+                {% if slide.imgName is defined and slide.imgName %}
+                    <img class="text-center" src="/img/slides/{{ slide.imgName }}" alt="" width="50%">
+                {% endif %}
+                {{ form_widget(form.img_name) }}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="jumbotron">
+            {{ form_label(form.container_alignment) }}
+            {{ form_widget(form.container_alignment) }}
+            {{ form_label(form.container_apparaition) }}
+            {{ form_widget(form.container_apparaition) }}
+            {{ form_label(form.text_alignment) }}
+            {{ form_widget(form.text_alignment) }}
+        </div>
+        <div class="jumbotron">
+            {{ form_label(form.link) }}
+            {{ form_widget(form.link) }}
+            {{ form_label(form.video_link) }}
+            {{ form_widget(form.video_link) }}
+        </div>
+    </div>
+</div>
+{{ form_end(form) }}

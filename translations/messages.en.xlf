@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="en" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Save</target>
+      </trans-unit>
+      <trans-unit id="Ukk_yiJ" resname="Image name">
+        <source>Image name</source>
+        <target>Image name</target>
+      </trans-unit>
+      <trans-unit id="UnO7OnD" resname="Container alignment">
+        <source>Container alignment</source>
+        <target>Container alignment</target>
+      </trans-unit>
+      <trans-unit id="HLIFKtv" resname="Top Left">
+        <source>Top Left</source>
+        <target>Top Left</target>
+      </trans-unit>
+      <trans-unit id="Jx6sNBj" resname="Top Center">
+        <source>Top Center</source>
+        <target>Top Center</target>
+      </trans-unit>
+      <trans-unit id="3M.xb6I" resname="Top Right">
+        <source>Top Right</source>
+        <target>Top Right</target>
+      </trans-unit>
+      <trans-unit id="WWqOS41" resname="Middle Left">
+        <source>Middle Left</source>
+        <target>Middle Left</target>
+      </trans-unit>
+      <trans-unit id="QoCRpYg" resname="Middle Center">
+        <source>Middle Center</source>
+        <target>Middle Center</target>
+      </trans-unit>
+      <trans-unit id="Gy1aYLz" resname="Middle Right">
+        <source>Middle Right</source>
+        <target>Middle Right</target>
+      </trans-unit>
+      <trans-unit id="dJl2D4c" resname="Bottom Left">
+        <source>Bottom Left</source>
+        <target>Bottom Left</target>
+      </trans-unit>
+      <trans-unit id="aBiFDkE" resname="Bottom Center">
+        <source>Bottom Center</source>
+        <target>Bottom Center</target>
+      </trans-unit>
+      <trans-unit id="CbKM14H" resname="Bottom Right">
+        <source>Bottom Right</source>
+        <target>Bottom Right</target>
+      </trans-unit>
+      <trans-unit id="xyc8bIA" resname="Container apparaition">
+        <source>Container apparaition</source>
+        <target>Container apparaition</target>
+      </trans-unit>
+      <trans-unit id="nvtZfJF" resname="Fade">
+        <source>Fade</source>
+        <target>Fade</target>
+      </trans-unit>
+      <trans-unit id="WOuQMuO" resname="Left">
+        <source>Left</source>
+        <target>Left</target>
+      </trans-unit>
+      <trans-unit id="iDNh1da" resname="Right">
+        <source>Right</source>
+        <target>Right</target>
+      </trans-unit>
+      <trans-unit id="1c389.9" resname="Top">
+        <source>Top</source>
+        <target>Top</target>
+      </trans-unit>
+      <trans-unit id="R5rSGsk" resname="Bottom">
+        <source>Bottom</source>
+        <target>Bottom</target>
+      </trans-unit>
+      <trans-unit id="ml5a.vb" resname="Text alignment">
+        <source>Text alignment</source>
+        <target>Text alignment</target>
+      </trans-unit>
+      <trans-unit id="hd5v3y3" resname="Button title">
+        <source>Button title</source>
+        <target>Button title</target>
+      </trans-unit>
+      <trans-unit id="Fo7rQD2" resname="Button link">
+        <source>Button link</source>
+        <target>Button link</target>
+      </trans-unit>
+      <trans-unit id="pqMtvFY" resname="Link">
+        <source>Link</source>
+        <target>Link</target>
+      </trans-unit>
+      <trans-unit id="XKA1Ejr" resname="Video Link">
+        <source>Video Link</source>
+        <target>Video Link</target>
+      </trans-unit>
+      <trans-unit id="R70pB1_" resname="Content">
+        <source>Content</source>
+        <target>Content</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Category</target>
+      </trans-unit>
+      <trans-unit id="WGe1ALS" resname="Choose of category">
+        <source>Choose of category</source>
+        <target>Choose of category</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

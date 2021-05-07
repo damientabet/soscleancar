@@ -3,16 +3,16 @@
 {% block body %}
     <div class="clearfix bg-white mb-4 p-3">
         <div class="float-left">
-            <h1 class="h3 mb-2 text-gray-800">Créer un slide</h1>
+            <h1 class="h3 mb-2 text-gray-800">{{ 'Create slide'|trans }}</h1>
         </div>
         <div class="float-right">
             <a href="{{ path('admin.slide.list') }}" class="btn btn-light btn-icon-split">
                 <span class="icon text-gray-600">
                     <i class="fas fa-arrow-left"></i>
                 </span>
-                <span class="text">Retour à la liste</span>
+                <span class="text">{{ 'Back to the list'|trans() }}</span>
             </a>
         </div>
     </div>
-    {{ form(form) }}
+    {% include 'admin/slide/include/form.html.twig' with {'form': form} %}
 {% endblock %}

@@ -10,14 +10,21 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class AdminArticleController
  * @package App\Controller\Admin
- * @Route("/admin/article")
+ * @Route("{_locale}/admin/article", requirements={"_locale": "en|fr"})
  */
 class AdminArticleController extends AbstractController
 {
+    private $translator;
+
+    public function __construct(TranslatorInterface $translator)
+    {
+        $this->translator = $translator;
+    }
     /**
      * @Route("/list", name="admin.article.list")
      * @param ArticleRepository $articleRepository
@@ -50,7 +57,7 @@ class AdminArticleController extends AbstractController
             $em->persist($article);
             $em->flush();
 
-            $this->addFlash('success', 'L\'article a été bien été créé.');
+            $this->addFlash('success', $this->translator->trans('The article has been created'));
             return $this->redirectToRoute('admin.article.list');
         }
 
@@ -79,7 +86,7 @@ class AdminArticleController extends AbstractController
             $em->persist($article);
             $em->flush();
 
-            $this->addFlash('success', 'L\'article a été bien été mis à jour.');
+            $this->addFlash('success', $this->translator->trans('The article has been updated'));
         }
 
         return $this->render('admin/article/edit.html.twig', [
@@ -92,13 +99,13 @@ class AdminArticleController extends AbstractController
      * @param Article $article
      * @return RedirectResponse
      */
-    public function deleteTaskAction(Article $article)
+    public function delete(Article $article)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($article);
         $em->flush();
 
-        $this->addFlash('success', 'La tâche a bien été supprimée.');
+        $this->addFlash('success', $this->translator->trans('The article has been deleted'));
 
         return $this->redirectToRoute('admin.article.list');
     }

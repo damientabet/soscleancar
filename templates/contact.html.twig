@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Contactez-nous
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Contact</h1>
+        <div id="content">
+            <div class="container-fluid">
+                {% for label, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ label }} alert-dismissible fade show" role="alert">
+                            <p>{{ message }}</p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    {% endfor %}
+                {% endfor %}
+            </div>
+        </div>
+        {{ form(form) }}
+    </div>
+{% endblock %}

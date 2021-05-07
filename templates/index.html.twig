@@ -2,25 +2,106 @@
 
 {% block stylesheets %}
     <link rel="stylesheet" href="/masterslider/style/masterslider.css">
+    <link rel="stylesheet" href="/masterslider/skins/default/style.css">
+    <link rel="stylesheet" href="/node_modules/aos/dist/aos.css"/>
+{% endblock %}
+
+{% block title %}
+    SOSCLEANCAR - Spécialiste du detailing depuis 2009
 {% endblock %}
 
 {% block body %}
-    <h1>Hello World</h1>
+    {% if slides is defined and slides %}
+        {% include 'slide.html.twig' %}
+    {% endif %}
+    <div class="pb-5 text-center">
+        <div class="container">
+            <div class="row">
+                <div class="card-deck">
+                    {% for reinsurance in reinsurances %}
+                        <div class="card p-3 shadow border-0 reassurance">
+                            {% if reinsurance.id == 1 %}
+                                <img src="/img/svg/paste-solid.svg" class="card-img-top mx-auto" alt="...">
+                                {% elseif reinsurance.id == 2 %}
+                                    <img src="/img/svg/graduation-cap-solid.svg" class="card-img-top mx-auto" alt="...">
+                                {% elseif reinsurance.id == 3 %}
+                                    <img src="/img/svg/handshake-solid.svg" class="card-img-top mx-auto" alt="...">
+                            {% endif %}
+                            <div class="card-body">
+                                <h5 class="card-title">{{ reinsurance.title }}</h5>
+                                <p class="card-text">{{ reinsurance.description }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% for homeBlock in homeBlocks %}
+        {% if homeBlock.id == 1 %}
+        <section class="container-fluid block-container">
+            <div class="row text-center">
+                <div class="col-md-6 p-0">
+                    <img class="w-100" src="/img/index/P1000656.jpg" alt="" data-aos="fade-right">
+                </div>
+                <div class="col-md-6 my-auto text-right block-container__text" data-aos="fade-left">
+                    <h2 class="text-uppercase" style="color: #997438">{{ homeBlock.title }}</h2>
 
-    {% include 'slide.html.twig' %}
+                    <p style="opacity: 0.7">{{ homeBlock.text }}</p>
+                    {#                <a class="btn btn-lg btn-outline-default text-center" href="/"#}
+                    {#                   style="color: #997438; border-color: #997438">#}
+                    {#                    Voir la catégorie <i class="fas fa-arrow-right"></i></a>#}
+                </div>
+            </div>
+        </section>
+        {% elseif homeBlock.id == 2 %}
+            <section class="container home-polissage">
+                <div class="row align-items-center h-100">
+                    <div class="col-md-6 order-md-2 home-polissage__div-img">
+                        <div class="position-relative">
+                            <div class="row no-gutters clearfix">
+                                <p class="col-6 col-md-12 mb-0 home-polissage__img home-polissage__img--1"><img
+                                            class="img-fluid" src="/img/index/before.jpeg" alt="" data-aos="fade-left"></p>
+                                <p class="col-6 col-md-12 mb-0 home-polissage__img home-polissage__img--2"><img
+                                            class="img-fluid" src="/img/index/after.jpeg" alt="" data-aos="fade-left"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-left order-md-1" data-aos="fade-right">
+                        <h2 class="text-uppercase" style="color: #997438">{{ homeBlock.title }}</h2>
+                        <hr class="w-100" style="color: #997438;">
+                        <p style="opacity: 0.7">{{ homeBlock.text }}</p>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+    <div class="bg-dark"
+         style="background: url('/img/index/P1010342.jpg') bottom fixed; color: #ffffff; padding-top: 5%; padding-bottom: 5%">
+        <div class="container text-center">
+            <h2 class="mb-3 text-uppercase">Nous travaillons avec les meilleurs</h2>
+            <div class="row" data-aos="fade-up">
+                <div class="col-md-3 my-auto">
+                    <img class="w-100" src="/img/index/systemx.png" alt="">
+                </div>
+                <div class="col-md-3 my-auto">
+                    <img class="w-100" src="/img/index/carboncollective.png" alt="">
+                </div>
+                <div class="col-md-3 my-auto">
+                    <img class="w-100" src="/img/index/restore-eclat.png" alt="">
+                </div>
+                <div class="col-md-3 my-auto">
+                    <img class="w-100" src="/img/index/fireball.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascripts %}
-    <script src="/masterslider/masterslider.js"></script>
-    <script>
-        var slider = new MasterSlider();
-        slider.setup('masterslider', {
-            width: 1920,
-            height: 500,
-            space: 5,
-            autoplay: true,
-            arrows: true,
-            speed: 10,
-        });
-    </script>
+    <script src="/node_modules/aos/dist/aos.js"></script>
+    <script src="/masterslider/masterslider.min.js"></script>
+    <script src="/js/masterslider.config.js"></script>
+    <script src="/js/aos.config.js"></script>
+    <script src="/js/index.js"></script>
 {% endblock %}

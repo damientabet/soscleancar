@@ -1,17 +1,25 @@
 <!-- masterslider -->
-<div class="master-slider ms-skin-default" id="masterslider">
+<div class="master-slider ms-skin-default mb-5" id="masterslider">
     <!-- new slide -->
     {% for slide in slides %}
-    <div class="ms-slide">
-        <!-- slide background -->
-        <img src="/img/slides/{{ slide.imgName }}" data-src="/img/slides/{{ slide.imgName }}" alt="lorem ipsum dolor sit"/>
-        <!-- slide text layer -->
-        <div class="ms-layer ms-caption" style="top:10px; left:30px;">
-            {{ slide.name }}
+        <div class="ms-slide {{ slide.textAlignment }}" data-delay="10">
+            <!-- slide background -->
+            <img src="/img/slides/{{ slide.imgName }}" data-src="/img/slides/{{ slide.imgName }}"
+                 alt="lorem ipsum dolor sit"/>
+            <!-- slide text layer -->
+            <div class="ms-layer ms-caption p-5 ms-layer-content"
+                 data-type="text" data-origin="{{ slide.containerAlignment }}"
+                 data-effect="{{ slide.containerApparaition }}"
+                 style="color: #ffffff;">
+                <p class="text-uppercase pb-2" style="font-size: 50px;">{{ slide.title }}</p>
+                <p>{{ slide.description }}</p>
+                {% if slide.buttonLink is not empty %}
+                    <a class="btn btn-primary" href="{{ slide.buttonLink }}">{{ slide.buttonTitle }}</a>
+                {% endif %}
+            </div>
+            <!-- linked slide -->
+{#            <a href="http://codecanyon.net/user/averta">Averta</a>#}
         </div>
-        <!-- linked slide -->
-        <a href="http://codecanyon.net/user/averta">Averta</a>
-    </div>
     {% endfor %}
     <!-- end of slide -->
 </div>

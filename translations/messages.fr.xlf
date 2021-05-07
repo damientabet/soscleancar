@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="fr" target-language="fr" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="UujxAm." resname="The slide has been created">
+        <source>The slide has been created</source>
+        <target>Le slide a été créé</target>
+      </trans-unit>
+      <trans-unit id="IM3fh0o" resname="The slide has been updated">
+        <source>The slide has been updated</source>
+        <target>Le slide a été mis à jour</target>
+      </trans-unit>
+      <trans-unit id="msg7E7G" resname="The slide has been deleted">
+        <source>The slide has been deleted</source>
+        <target>Le slide a été supprimé</target>
+      </trans-unit>
+      <trans-unit id="ivARh.B" resname="The article has been created">
+        <source>The article has been created</source>
+        <target>L'article a été créé</target>
+      </trans-unit>
+      <trans-unit id="zI_gXi0" resname="The article has been updated">
+        <source>The article has been updated</source>
+        <target>L'article a été mis à jour</target>
+      </trans-unit>
+      <trans-unit id="zVwOwus" resname="The article has been deleted">
+        <source>The article has been deleted</source>
+        <target>L'article a été supprimé</target>
+      </trans-unit>
+      <trans-unit id="fozSBW2" resname="Title">
+        <source>Title</source>
+        <target>Titre</target>
+      </trans-unit>
+      <trans-unit id="Um4Ah8w" resname="Description">
+        <source>Description</source>
+        <target>Description</target>
+      </trans-unit>
+      <trans-unit id=".4BZ3Gd" resname="Actions">
+        <source>Actions</source>
+        <target>Actions</target>
+      </trans-unit>
+      <trans-unit id="PUQzcBC" resname="Created At">
+        <source>Created At</source>
+        <target>Créer le</target>
+      </trans-unit>
+      <trans-unit id="UWOo_ZF" resname="DataTables Example">
+        <source>DataTables Example</source>
+        <target>Exemple de table de données</target>
+      </trans-unit>
+      <trans-unit id="3NHVIj9" resname="Name">
+        <source>Name</source>
+        <target>Nom</target>
+      </trans-unit>
+      <trans-unit id="FQn1YfJ" resname="Save">
+        <source>Save</source>
+        <target>Enregistrer</target>
+      </trans-unit>
+      <trans-unit id="Ukk_yiJ" resname="Image name">
+        <source>Image name</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="UnO7OnD" resname="Container alignment">
+        <source>Container alignment</source>
+        <target>Alignement du contenu</target>
+      </trans-unit>
+      <trans-unit id="HLIFKtv" resname="Top Left">
+        <source>Top Left</source>
+        <target>Haut gauche</target>
+      </trans-unit>
+      <trans-unit id="Jx6sNBj" resname="Top Center">
+        <source>Top Center</source>
+        <target>Haut centré</target>
+      </trans-unit>
+      <trans-unit id="3M.xb6I" resname="Top Right">
+        <source>Top Right</source>
+        <target>Haut droite</target>
+      </trans-unit>
+      <trans-unit id="WWqOS41" resname="Middle Left">
+        <source>Middle Left</source>
+        <target>Milieu gauche</target>
+      </trans-unit>
+      <trans-unit id="QoCRpYg" resname="Middle Center">
+        <source>Middle Center</source>
+        <target>Milieu centré</target>
+      </trans-unit>
+      <trans-unit id="Gy1aYLz" resname="Middle Right">
+        <source>Middle Right</source>
+        <target>Milieu droite</target>
+      </trans-unit>
+      <trans-unit id="dJl2D4c" resname="Bottom Left">
+        <source>Bottom Left</source>
+        <target>Bas gauche</target>
+      </trans-unit>
+      <trans-unit id="aBiFDkE" resname="Bottom Center">
+        <source>Bottom Center</source>
+        <target>Bas centré</target>
+      </trans-unit>
+      <trans-unit id="CbKM14H" resname="Bottom Right">
+        <source>Bottom Right</source>
+        <target>Bas droite</target>
+      </trans-unit>
+      <trans-unit id="xyc8bIA" resname="Container apparaition">
+        <source>Container apparaition</source>
+        <target>Apparation du contenu</target>
+      </trans-unit>
+      <trans-unit id="nvtZfJF" resname="Fade">
+        <source>Fade</source>
+        <target></target>
+      </trans-unit>
+      <trans-unit id="WOuQMuO" resname="Left">
+        <source>Left</source>
+        <target>Vers la gauche</target>
+      </trans-unit>
+      <trans-unit id="iDNh1da" resname="Right">
+        <source>Right</source>
+        <target>Vers la droite</target>
+      </trans-unit>
+      <trans-unit id="1c389.9" resname="Top">
+        <source>Top</source>
+        <target>Vers le haut</target>
+      </trans-unit>
+      <trans-unit id="R5rSGsk" resname="Bottom">
+        <source>Bottom</source>
+        <target>Vers le bas</target>
+      </trans-unit>
+      <trans-unit id="ml5a.vb" resname="Text alignment">
+        <source>Text alignment</source>
+        <target>Alignement du texte</target>
+      </trans-unit>
+      <trans-unit id="hd5v3y3" resname="Button title">
+        <source>Button title</source>
+        <target>Titre du bouton</target>
+      </trans-unit>
+      <trans-unit id="Fo7rQD2" resname="Button link">
+        <source>Button link</source>
+        <target>Lien du bouton</target>
+      </trans-unit>
+      <trans-unit id="hLR1xbJ" resname="Home editor">
+        <source>Home editor</source>
+        <target>Editeur de page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="uLHYlMa" resname="Categories">
+        <source>Categories</source>
+        <target>Catégories</target>
+      </trans-unit>
+      <trans-unit id="HQxb5zf" resname="Slideshow">
+        <source>Slideshow</source>
+        <target>Diaporama</target>
+      </trans-unit>
+      <trans-unit id="byAvVKe" resname="List">
+        <source>List</source>
+        <target>Liste</target>
+      </trans-unit>
+      <trans-unit id="Z7aWRoY" resname="Dashboard">
+        <source>Dashboard</source>
+        <target>Tableau de bord</target>
+      </trans-unit>
+      <trans-unit id="pqMtvFY" resname="Link">
+        <source>Link</source>
+        <target>Lien</target>
+      </trans-unit>
+      <trans-unit id="XKA1Ejr" resname="Video Link">
+        <source>Video Link</source>
+        <target>Lien de la video</target>
+      </trans-unit>
+      <trans-unit id="ebbF.4f" resname="Back to the list">
+        <source>Back to the list</source>
+        <target>Retour à la liste</target>
+      </trans-unit>
+      <trans-unit id="R70pB1_" resname="Content">
+        <source>Content</source>
+        <target>Contenu</target>
+      </trans-unit>
+      <trans-unit id="KSwG8AR" resname="Category">
+        <source>Category</source>
+        <target>Catégorie</target>
+      </trans-unit>
+      <trans-unit id="sUrHikb" resname="Articles">
+        <source>Articles</source>
+        <target>Articles</target>
+      </trans-unit>
+      <trans-unit id="0FJ_Sz1" resname="Logout">
+        <source>Logout</source>
+        <target>Se déconnecter</target>
+      </trans-unit>
+      <trans-unit id="h.twKug" resname="Edit reinsurance element">
+        <source>Edit reinsurance element</source>
+        <target>Modifier l'élement de réassurance</target>
+      </trans-unit>
+      <trans-unit id="Y8yd6oj" resname="Reinsurances elements list">
+        <source>Reinsurances elements list</source>
+        <target>Liste des élements de réassurances</target>
+      </trans-unit>
+      <trans-unit id="aXpun2f" resname="Reinsurance">
+        <source>Reinsurance</source>
+        <target>Réassurance</target>
+      </trans-unit>
+      <trans-unit id="UY2tkdK" resname="Home blocks">
+        <source>Home blocks</source>
+        <target>Blocs de page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="CCC0W1Y" resname="Edit home elements">
+        <source>Edit home elements</source>
+        <target>Modifier un élément de page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="KjtVIH9" resname="Home elements list">
+        <source>Home elements list</source>
+        <target>Liste des élements de page d'accueil</target>
+      </trans-unit>
+      <trans-unit id="o08C4.t" resname="Edit slide">
+        <source>Edit slide</source>
+        <target>Modifier un slide</target>
+      </trans-unit>
+      <trans-unit id="20bUPHd" resname="Slide list">
+        <source>Slide list</source>
+        <target>Liste des slides</target>
+      </trans-unit>
+      <trans-unit id="fTs7qcv" resname="Create slide">
+        <source>Create slide</source>
+        <target>Créer un slide</target>
+      </trans-unit>
+      <trans-unit id="GqTLC8y" resname="Image">
+        <source>Image</source>
+        <target>Image</target>
+      </trans-unit>
+      <trans-unit id="IWEN1vH" resname="Edit category">
+        <source>Edit category</source>
+        <target>Modifier une catégorie</target>
+      </trans-unit>
+      <trans-unit id="1VXNNVq" resname="Categories list">
+        <source>Categories list</source>
+        <target>Liste des catégories</target>
+      </trans-unit>
+      <trans-unit id="EnSKpda" resname="Create category">
+        <source>Create category</source>
+        <target>Créer une catégory</target>
+      </trans-unit>
+      <trans-unit id="wms_1M5" resname="Interface">
+        <source>Interface</source>
+        <target>Interface</target>
+      </trans-unit>
+      <trans-unit id="BBQL8qE" resname="Apparence">
+        <source>Apparence</source>
+        <target>Apparence</target>
+      </trans-unit>
+      <trans-unit id="2kVltHY" resname="Edit article">
+        <source>Edit article</source>
+        <target>Modifier un article</target>
+      </trans-unit>
+      <trans-unit id="nYJcIfB" resname="Articles list">
+        <source>Articles list</source>
+        <target>Liste des articles</target>
+      </trans-unit>
+      <trans-unit id=".99O3EF" resname="Create article">
+        <source>Create article</source>
+        <target>Créer un article</target>
+      </trans-unit>
+      <trans-unit id="IGOsIex" resname="Choose the layout">
+        <source>Choose the layout</source>
+        <target>Choisir un modèle</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
