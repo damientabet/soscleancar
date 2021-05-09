@@ -17,9 +17,32 @@
 {% endblock %}
 
 {% block javascripts %}
-    {{ tinymce_init({
-        theme: {'simple':{'language': app.request.locale, 'height': 500 }},
-        toolbar: "insertfile undo redo",
-        automatic_uploads: true
-    }) }}
+    <script src="/bundles/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language: 'fr_FR',
+            plugins: [
+                'autolink',
+                'autoresize',
+                'codesample',
+                'link',
+                'lists',
+                'media',
+                'table',
+                'image',
+                'quickbars',
+                'codesample',
+                'help',
+                'code',
+                'preview'
+            ],
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor forecolor | fontselect fontsizeselect | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat image code preview | help',
+            toolbar_mode: 'floating',
+        });
+    </script>
 {% endblock %}
