@@ -43,7 +43,7 @@
                             <td>{{ legal.createdAt|date('d/m/Y H:i:m') }}</td>
                             <td>{{ legal.updatedAt|date('d/m/Y H:i:m') }}</td>
                             <td><a href="{{ path('admin.legals.edit', {id: legal.id}) }}" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
-                                <a href="{{ path('admin.legals.delete', {id: legal.id}) }}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a></td>
+                                <a href="{{ path('admin.legals.delete', {id: legal.id}) }}" class="btn btn-danger btn-circle btn-delete-element"><i class="fas fa-trash"></i></a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
