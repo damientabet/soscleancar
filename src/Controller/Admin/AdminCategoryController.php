@@ -35,7 +35,7 @@ class AdminCategoryController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function create(Request $request)
+    public function create(Request $request): Response
     {
         $category = new Category();
         $form = $this->createForm(CategoryType::class, $category);

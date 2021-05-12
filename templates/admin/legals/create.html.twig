@@ -1,0 +1,50 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block body %}
+    <div class="clearfix bg-white mb-4 p-3">
+        <div class="float-left">
+            <h1 class="h3 mb-2 text-gray-800">{{ 'Create legal page'|trans }}</h1>
+        </div>
+        <div class="float-right">
+            <a href="{{ path('admin.legals.list') }}" class="btn btn-light btn-icon-split">
+                <span class="icon text-gray-600">
+                    <i class="fas fa-arrow-left"></i>
+                </span>
+                <span class="text">{{ 'Back to the list'|trans() }}</span>
+            </a>
+        </div>
+    </div>
+    {{ form(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/bundles/tinymce/tinymce.min.js"></script>
+    <script src="/js/admin.js"></script>
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language: 'fr_FR',
+            plugins: [
+                'autolink',
+                'autoresize',
+                'codesample',
+                'link',
+                'lists',
+                'media',
+                'table',
+                'image',
+                'quickbars',
+                'codesample',
+                'help',
+                'code',
+                'preview'
+            ],
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor forecolor | fontselect fontsizeselect | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat image code preview | help',
+            toolbar_mode: 'floating',
+        });
+    </script>
+{% endblock %}
