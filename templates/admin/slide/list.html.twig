@@ -41,7 +41,7 @@
                                 <td>{{ slide.name }}</td>
                                 <td><img src="/img/slides/{{ slide.imgName }}" alt="{{ slide.name }}" height="10%"></td>
                                 <td><a href="{{ path('admin.slide.edit', {id: slide.id}) }}" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
-                                    <a href="{{ path('admin.slide.delete', {id: slide.id}) }}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a></td>
+                                    <a href="{{ path('admin.slide.delete', {id: slide.id}) }}" class="btn btn-danger btn-circle btn-delete-element"><i class="fas fa-trash"></i></a></td>
                             </tr>
                         {% endfor %}
                         </tbody>

@@ -37,7 +37,7 @@
                             <td>{{ category.id }}</td>
                             <td>{{ category.name }}</td>
                             <td><a href="{{ path('admin.category.edit', {id: category.id}) }}" class="btn btn-warning btn-circle"><i class="fas fa-edit"></i></a>
-                                <a href="{{ path('admin.category.delete', {id: category.id}) }}" class="btn btn-danger btn-circle"><i class="fas fa-trash"></i></a></td>
+                                <a href="{{ path('admin.category.delete', {id: category.id}) }}" class="btn btn-danger btn-circle btn-delete-element"><i class="fas fa-trash"></i></a></td>
                         </tr>
                     {% endfor %}
                     </tbody>
