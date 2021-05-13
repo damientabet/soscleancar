@@ -4,7 +4,7 @@ $(document).ready(function(){
     }
 
     $('.btn-delete-element').on('click', function(e){
-        confirmAlert(e);
+        confirmAlert(e, $(this).attr('href'));
     })
 })
 
@@ -22,19 +22,20 @@ function displayFlashMessages() {
     })
 }
 
-function confirmAlert(e) {
+function confirmAlert(e, href) {
     e.preventDefault();
     Swal.fire({
-        title: 'Are you sure you want to delete the item ?',
+        title: Translator.trans('Are you sure you want to delete the item ?', {} , 'messages'),
         icon: "warning",
         showCancelButton: true,
         showConfirmButton: true,
-        confirmButtonText: '<i class="fas fa-trash"></i> Delete',
+        confirmButtonText: '<i class="fas fa-trash"></i> ' + Translator.trans("Delete", {} , 'messages'),
+        cancelButtonText: Translator.trans("Cancel", {} , 'messages'),
         confirmButtonColor: '#d6303e',
         showCloseButton: false,
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = window.location.origin + $(this).attr('href');
+            window.location.href = window.location.origin + href;
         }
     })
 }
