@@ -33,7 +33,7 @@ class LegalsController extends AbstractController
      */
     public function index(Legals $legals, CategoryRepository $categoryRepository): Response
     {
-        return $this->render('legals.html.twig',  [
+        return $this->render('@front/legals.html.twig',  [
             'legal' => $legals,
             'categories' => $categoryRepository->findAll()
         ]);

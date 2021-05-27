@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\RedirectResponse;
@@ -33,13 +33,13 @@ class SecurityController extends AbstractController
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
 
-        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
+        return $this->render('@admin/security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
     /**
      * @Route("/logout", name="logout")
      */
-    public function logout()
+    public function logout(): RedirectResponse
     {
         return new RedirectResponse($this->urlGenerator->generate('admin.login'));
     }

@@ -1,18 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends '@front/base.html.twig' %}
 
 {% block title %}
-    {{ legal.name }}
+    {{ article.title }}
 {% endblock %}
 
 {% block body %}
     <div style="background: url('/img/index/P1010347.jpg') no-repeat center; height: 450px;">
         <div class="container" style="height: 450px">
             <div class="row align-items-center h-100">
-                <h1 class="text-white" style="font-size: 50px">{{ legal.name }}</h1>
+                <h1 class="text-white" style="font-size: 50px">{{ article.title }}</h1>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="mt-5 mb-5">{{ legal.content|raw }}</div>
+        <div class="mt-5 mb-5">{{ article.content|raw }}</div>
     </div>
 {% endblock %}

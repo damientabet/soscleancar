@@ -35,7 +35,7 @@ class AdminSlideController extends AbstractController
      */
     public function list(SlideRepository $slideRepository): Response
     {
-        return $this->render('admin/slide/list.html.twig', [
+        return $this->render('@admin/slide/list.html.twig', [
             'slides' => $slideRepository->findAll()
         ]);
     }
@@ -64,7 +64,7 @@ class AdminSlideController extends AbstractController
             return $this->redirectToRoute('admin.slide.list');
         }
 
-        return $this->render('admin/slide/create.html.twig', [
+        return $this->render('@admin/slide/create.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -91,7 +91,7 @@ class AdminSlideController extends AbstractController
             return $this->redirectToRoute('admin.slide.list');
         }
 
-        return $this->render('admin/slide/edit.html.twig', [
+        return $this->render('@admin/slide/edit.html.twig', [
             'form' => $form->createView(),
             'slide' => $slide
         ]);

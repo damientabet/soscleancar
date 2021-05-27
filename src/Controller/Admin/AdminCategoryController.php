@@ -23,9 +23,9 @@ class AdminCategoryController extends AbstractController
      * @param CategoryRepository $categoryRepository
      * @return Response
      */
-    public function list(CategoryRepository $categoryRepository)
+    public function list(CategoryRepository $categoryRepository): Response
     {
-        return $this->render('admin/category/list.html.twig', [
+        return $this->render('@admin/category/list.html.twig', [
             'categories' => $categoryRepository->findAll()
         ]);
     }
@@ -52,7 +52,7 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin.category.list');
         }
 
-        return $this->render('admin/category/create.html.twig', [
+        return $this->render('@admin/category/create.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -63,7 +63,7 @@ class AdminCategoryController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function edit(Category $category, Request $request)
+    public function edit(Category $category, Request $request): Response
     {
         $form = $this->createForm(CategoryType::class, $category);
 
@@ -79,7 +79,7 @@ class AdminCategoryController extends AbstractController
             return $this->redirectToRoute('admin.category.list');
         }
 
-        return $this->render('admin/category/edit.html.twig', [
+        return $this->render('@admin/category/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -89,7 +89,7 @@ class AdminCategoryController extends AbstractController
      * @param Category $category
      * @return RedirectResponse
      */
-    public function delete(Category $category)
+    public function delete(Category $category): RedirectResponse
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($category);

@@ -29,7 +29,7 @@ class AdminReinsuranceController extends AbstractController
             return $this->redirectToRoute('admin.home.editor');
         }
 
-        return $this->render('admin/home/edit.html.twig', [
+        return $this->render('@admin/home/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }

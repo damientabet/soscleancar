@@ -1,4 +1,4 @@
-{% extends "base.html.twig" %}
+{% extends '@front/base.html.twig' %}
 
 {% block stylesheets %}
     <link rel="stylesheet" href="/masterslider/style/masterslider.css">
@@ -12,7 +12,7 @@
 
 {% block body %}
     {% if slides is defined and slides %}
-        {% include 'slide.html.twig' %}
+        {% include '@front/_includes/slide.html.twig' %}
     {% endif %}
     <div class="pb-5 text-center">
         <div class="container">
