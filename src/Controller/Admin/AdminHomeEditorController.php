@@ -24,7 +24,7 @@ class AdminHomeEditorController extends AbstractController
      */
     public function index(HomeReinsuranceRepository $reinsuranceRepository): Response
     {
-        return $this->render('admin/home/index.html.twig', [
+        return $this->render('@admin/home/index.html.twig', [
             'controller_name' => 'AdminHomeEditorController',
             'reinsurances' => $reinsuranceRepository->findAll()
         ]);
@@ -36,7 +36,7 @@ class AdminHomeEditorController extends AbstractController
      */
     public function listBlock(HomeEditorRepository $homeEditorRepository): Response
     {
-        return $this->render('admin/home/listBlocks.html.twig', [
+        return $this->render('@admin/home/listBlocks.html.twig', [
             'controller_name' => 'AdminHomeEditorController',
             'homeBlocks' => $homeEditorRepository->findAll()
         ]);
@@ -46,7 +46,7 @@ class AdminHomeEditorController extends AbstractController
      * @Route("/blocks/{id}/edit", name="admin.home.editor.blocks.edit")
      * @return Response
      */
-    public function editBlock(HomeEditor $homeEditor, Request $request)
+    public function editBlock(HomeEditor $homeEditor, Request $request): Response
     {
         $form = $this->createForm(HomeEditorType::class, $homeEditor);
 
@@ -61,7 +61,7 @@ class AdminHomeEditorController extends AbstractController
             $this->addFlash('success', 'L\'élément de la page d\'accueil a été mis à jour.');
             return $this->redirectToRoute('admin.home.editor.blocks.list');
         }
-        return $this->render('admin/home/editBlock.html.twig', [
+        return $this->render('@admin/home/editBlock.html.twig', [
             'controller_name' => 'AdminHomeEditorController',
             'form' => $form->createView()
         ]);

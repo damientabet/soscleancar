@@ -34,7 +34,7 @@ class ArticleController extends AbstractController
     public function index(Article $article, $slug, CategoryRepository $categoryRepository)
     {
         $this->checkSlug($article, $slug);
-        return $this->render('article.html.twig',  [
+        return $this->render('@front/article.html.twig',  [
             'article' => $article,
             'categories' => $categoryRepository->findAll(),
         ]);

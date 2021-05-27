@@ -31,7 +31,7 @@ class IndexController extends AbstractController
      */
     public function index(): Response
     {
-        return $this->render('index.html.twig', [
+        return $this->render('@front/index.html.twig', [
             'slides' => $this->slideRepository->findAll(),
             'categories' => $this->categoryRepository->findAll(),
             'reinsurances' => $this->reinsuranceRepository->findAll(),

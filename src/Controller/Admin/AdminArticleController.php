@@ -30,9 +30,9 @@ class AdminArticleController extends AbstractController
      * @param ArticleRepository $articleRepository
      * @return Response
      */
-    public function list(ArticleRepository $articleRepository)
+    public function list(ArticleRepository $articleRepository): Response
     {
-        return $this->render('admin/article/list.html.twig', [
+        return $this->render('@admin/article/list.html.twig', [
             'articles' => $articleRepository->findAll()
         ]);
     }
@@ -42,7 +42,7 @@ class AdminArticleController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function create(Request $request)
+    public function create(Request $request): Response
     {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);
@@ -61,7 +61,7 @@ class AdminArticleController extends AbstractController
             return $this->redirectToRoute('admin.article.list');
         }
 
-        return $this->render('admin/article/create.html.twig', [
+        return $this->render('@admin/article/create.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -72,7 +72,7 @@ class AdminArticleController extends AbstractController
      * @param Request $request
      * @return Response
      */
-    public function edit(Article $article, Request $request)
+    public function edit(Article $article, Request $request): Response
     {
         $form = $this->createForm(ArticleType::class, $article);
 
@@ -89,7 +89,7 @@ class AdminArticleController extends AbstractController
             $this->addFlash('success', $this->translator->trans('The article has been updated'));
         }
 
-        return $this->render('admin/article/edit.html.twig', [
+        return $this->render('@admin/article/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -99,7 +99,7 @@ class AdminArticleController extends AbstractController
      * @param Article $article
      * @return RedirectResponse
      */
-    public function delete(Article $article)
+    public function delete(Article $article): RedirectResponse
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($article);

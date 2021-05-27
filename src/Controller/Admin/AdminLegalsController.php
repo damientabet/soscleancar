@@ -30,7 +30,7 @@ class AdminLegalsController extends AbstractController
      */
     public function list(LegalsRepository $legalsRepository): Response
     {
-        return $this->render('admin/legals/list.html.twig', [
+        return $this->render('@admin/legals/list.html.twig', [
             'legals' => $legalsRepository->findAll()
         ]);
     }
@@ -59,7 +59,7 @@ class AdminLegalsController extends AbstractController
             $this->addFlash('success', $this->translator->trans('The page has been created'));
             return $this->redirectToRoute('admin.legals.list');
         }
-        return $this->render('admin/legals/create.html.twig', [
+        return $this->render('@admin/legals/create.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -88,7 +88,7 @@ class AdminLegalsController extends AbstractController
             return $this->redirectToRoute('admin.legals.list');
         }
 
-        return $this->render('admin/legals/edit.html.twig', [
+        return $this->render('@admin/legals/edit.html.twig', [
             'form' => $form->createView()
         ]);
     }

@@ -1,0 +1,41 @@
+{% extends "admin/layout.html.twig" %}
+{% block body %}
+    {% include 'admin/_includes/toolbar.html.twig' with {'title': title, 'listLink': listLink } %}
+    {{ form(form) }}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/bundles/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '.tinymce',
+            language: 'fr_FR',
+            plugins: [
+                'autolink',
+                'autoresize',
+                'codesample',
+                'link',
+                'lists',
+                'media',
+                'table',
+                'image',
+                'imagetools',
+                'quickbars',
+                'codesample',
+                'help',
+                'code',
+                'preview'
+            ],
+            menubar: 'file edit view insert format tools table help',
+            toolbar: 'undo redo | formatselect | ' +
+                'bold italic backcolor forecolor | fontselect fontsizeselect | alignleft aligncenter ' +
+                'alignright alignjustify | bullist numlist outdent indent | ' +
+                'removeformat link image code preview | help',
+            toolbar_mode: 'floating',
+            image_title: true,
+            automatic_uploads: true,
+            file_picker_types: 'image',
+            images_upload_url: '/admin/ajax/imgUpload.php',
+        });
+    </script>
+{% endblock %}

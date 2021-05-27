@@ -17,8 +17,8 @@ class AdminIndexController extends AbstractController
      * @Route("/", name="admin.index")
      * @return Response
      */
-    public function index()
+    public function index(): Response
     {
-        return $this->render('admin/dashboard.html.twig');
+        return $this->render('@admin/dashboard.html.twig');
     }
 }

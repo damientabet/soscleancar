@@ -10,6 +10,8 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class SlideType extends AbstractType
 {
@@ -17,12 +19,22 @@ class SlideType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, ['label' => 'Name'])
-            ->add('title', TextType::class, ['label' => 'Title'])
-            ->add('description', TextType::class, ['label' => 'Description'])
+            ->add('title', TextType::class, ['label' => 'Title', 'required' => false])
+            ->add('description', TextType::class, ['label' => 'Description', 'required' => false])
             ->add('img_name', FileType::class, [
                 'label' => 'Image name',
                 'mapped' => false,
                 'required' => false,
+                'constraints' => [
+                    new File([
+                        'maxSize' => '32M',
+                        'mimeTypes' => [
+                            'image/jpeg',
+                            'image/png',
+                        ],
+                        'mimeTypesMessage' => 'Please upload a valid image (.jpg, .jpeg, .png)',
+                    ])
+                ],
             ])
             ->add('link', TextType::class, [
                 'required' => false,
@@ -64,8 +76,8 @@ class SlideType extends AbstractType
                     'Bottom' => 'bottom',
                 ]
             ])
-            ->add('buttonTitle', TextType::class, ['label' => 'Button title'])
-            ->add('buttonLink', TextType::class, ['label' => 'Button link'])
+            ->add('buttonTitle', TextType::class, ['label' => 'Button title', 'required' => false])
+            ->add('buttonLink', TextType::class, ['label' => 'Button link', 'required' => false])
             ->add('submit', SubmitType::class, ['label' => 'Save'])
         ;
     }
