@@ -18,5 +18,6 @@
 .idea/
 /public/node_modules/
 /public/img/
+/public/admin/img/articles
 .env
 .env.test
