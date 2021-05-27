@@ -45,6 +45,10 @@
         <source>Created At</source>
         <target>Créer le</target>
       </trans-unit>
+      <trans-unit id="41yOT1y" resname="Updated At">
+        <source>Updated At</source>
+        <target>Modifié le</target>
+      </trans-unit>
       <trans-unit id="UWOo_ZF" resname="DataTables Example">
         <source>DataTables Example</source>
         <target>Exemple de table de données</target>
@@ -260,6 +264,54 @@
       <trans-unit id="IGOsIex" resname="Choose the layout">
         <source>Choose the layout</source>
         <target>Choisir un modèle</target>
+      </trans-unit>
+      <trans-unit id="WGe1ALS" resname="Choose of category">
+        <source>Choose of category</source>
+        <target>Choix de la catégorie</target>
+      </trans-unit>
+      <trans-unit id="CkEMeME" resname="Legals">
+        <source>Legals</source>
+        <target>Pages légales</target>
+      </trans-unit>
+      <trans-unit id="efAD0e4" resname="Legal pages list">
+        <source>Legal pages list</source>
+        <target>Liste des pages légales</target>
+      </trans-unit>
+      <trans-unit id="B2CLo7V" resname="Create legal">
+        <source>Create legal</source>
+        <target>Créer une page légale</target>
+      </trans-unit>
+      <trans-unit id="AUlBkUz" resname="Edit legal page">
+        <source>Edit legal page</source>
+        <target>Modifier une page légale</target>
+      </trans-unit>
+      <trans-unit id="oS6cGKP" resname="The page has been created">
+        <source>The page has been created</source>
+        <target>La page a été créée</target>
+      </trans-unit>
+      <trans-unit id="nJqFtPf" resname="The page has been updated">
+        <source>The page has been updated</source>
+        <target>La page a été mise à jour</target>
+      </trans-unit>
+      <trans-unit id="LocG6oO" resname="The page has been deleted">
+        <source>The page has been deleted</source>
+        <target>La page a été supprimée</target>
+      </trans-unit>
+      <trans-unit id="qKgAFUz" resname="Are you sure you want to delete the item ?">
+        <source>Are you sure you want to delete the item ?</source>
+        <target>Êtes-vous sûr de vouloir supprimer l'élement ?</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Supprimer</target>
+      </trans-unit>
+      <trans-unit id="GXZu1sy" resname="Cancel">
+        <source>Cancel</source>
+        <target>Annuler</target>
+      </trans-unit>
+      <trans-unit id="kaZ5Fpq" resname="Create legal page">
+        <source>Create legal page</source>
+        <target>__Create legal page</target>
       </trans-unit>
     </body>
   </file>
