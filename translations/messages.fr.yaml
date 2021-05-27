@@ -24,12 +24,14 @@ Bottom Left: Bas gauche
 Bottom Center: Bas centré
 Bottom Right: Bas droite
 Container apparaition: Apparation du contenu
-Fade:
+Fade: Disparition
 Left: Vers la gauche
 Right: Vers la droite
 Top: Vers le haut
 Bottom: Vers le bas
+Center: Centré
 Text alignment: Alignement du texte
+Video link: Lien de la vidéo
 Button title: Titre du bouton
 Button link: Lien du bouton
 Home editor: Editeur de page d'accueil
@@ -66,7 +68,7 @@ Choose the layout: Choisir un modèle
 Choose of category: Choix de la catégorie
 Legals: Pages légales
 Legal pages list: Liste des pages légales
-Create legal: Créer une page légale
+Create legal page: Créer une page légale
 Edit legal page: Modifier une page légale
 The page has been created: La page a été créée
 The page has been updated: La page a été mise à jour
