@@ -56,13 +56,19 @@
     color: #997438;
 }
 
+.slide-title {
+    font-size: 50px;
+}
+
 @media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #1C2331
+    .slide-title {
+        font-size: 20px;
+        line-height: 25px;
     }
 
-    .ms-layer-content {
-        display: none;
+    .slide-description {
+        font-size: 15px;
+        line-height: 20px;
     }
 }
 

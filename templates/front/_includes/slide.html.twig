@@ -11,8 +11,8 @@
                  data-type="text" data-origin="{{ slide.containerAlignment }}"
                  data-effect="{{ slide.containerApparaition }}(100, true)"
                  style="color: #ffffff;">
-                <p class="text-uppercase pb-2" style="font-size: 50px;">{{ slide.title }}</p>
-                <p>{{ slide.description }}</p>
+                <p class="text-uppercase slide-title">{{ slide.title }}</p>
+                <p class="slide-description">{{ slide.description }}</p>
                 {% if slide.buttonLink is not empty %}
                     <a class="btn btn-primary" href="{{ slide.buttonLink }}">{{ slide.buttonTitle }}</a>
                 {% endif %}

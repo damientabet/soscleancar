@@ -7,7 +7,8 @@
                 <h1 class="h3 mb-2 text-gray-800">{{ 'Articles list'|trans }}</h1>
             </div>
             <div class="float-right">
-                <button id="createArticle" class="btn btn-success">{{ 'Create article'|trans }}</button>
+{#                <button id="createArticle" class="btn btn-success">{{ 'Create article'|trans }}</button>#}
+                <a href="{{ path('admin.article.create') }}" class="btn btn-success">{{ 'Create article'|trans }}</a>
             </div>
         </div>
 
