@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         $(function() {
             var navbar = $(".navbar");
             $(window).scroll(function() {
@@ -7,7 +6,6 @@ $(document).ready(function(){
                 resizeNavBar(navbar, scroll);
             });
         });
-    }
 
     var navbar = $(".navbar");
     var scroll = $(window).scrollTop();

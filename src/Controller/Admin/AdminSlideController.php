@@ -7,6 +7,7 @@ use App\Form\SlideType;
 use App\Repository\SlideRepository;
 use App\Service\FileUploader;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,11 +23,13 @@ class AdminSlideController extends AbstractController
 {
     private $fileUploader;
     private $translator;
+    private $targetDirectory;
 
-    public function __construct(FileUploader $fileUploader, TranslatorInterface $translator)
+    public function __construct(FileUploader $fileUploader, TranslatorInterface $translator, $targetDirectory)
     {
         $this->fileUploader = $fileUploader;
         $this->translator = $translator;
+        $this->targetDirectory = $targetDirectory;
     }
     /**
      * @Route("/", name="admin.slide.list")
@@ -105,6 +108,7 @@ class AdminSlideController extends AbstractController
     public function delete(Slide $slide): RedirectResponse
     {
         $em = $this->getDoctrine()->getManager();
+        $this->deleteImage($slide);
         $em->remove($slide);
         $em->flush();
 
@@ -116,8 +120,23 @@ class AdminSlideController extends AbstractController
     public function addImage(Slide $slide, $imageFile)
     {
         if ($imageFile) {
-            $imageFileName = $this->fileUploader->upload($imageFile);
+            $imageFileName = $this->fileUploader->upload($imageFile, $this->getTargetDirectory());
             $slide->setImgName($imageFileName);
         }
+    }
+
+    public function deleteImage(Slide $slide)
+    {
+        $filesystem = new Filesystem();
+        $imagePath = 'img/slides/'.$slide->getImgName();
+
+        if ($filesystem->exists($imagePath)) {
+            $filesystem->remove($imagePath);
+        }
+    }
+
+    public function getTargetDirectory()
+    {
+        return $this->targetDirectory;
     }
 }
