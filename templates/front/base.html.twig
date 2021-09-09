@@ -7,6 +7,7 @@
     <title>{% block title %}Welcome!{% endblock %}</title>
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="/node_modules/mburger-css/dist/mburger.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/global.css">
 
@@ -14,35 +15,8 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
-<div class="navbar navbar-expand-sm fixed-top navbar-dark {% if app.request.get('_route') == 'home' %}pt-lg-5 pl-lg-5{% endif %}">
-    <a class="navbar-brand" href="{{ path('home') }}">SOSCLEANCAR</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('home') }}">Accueil</a>
-            </li>
-            {% if categories is defined %}
-                {% for category in categories %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            {{ category.name }}
-                        </a>
-                        <div class="dropdown-menu rounded-0 p-0 border-0 bg-dark" aria-labelledby="navbarDropdown">
-                            {% for article in category.getArticles() %}
-                                <a class="dropdown-item text-white" href="{{ path('article.index', {'id': article.id, 'slug': article.title}) }}">{{ article.title }}</a>
-                            {% endfor %}
-                        </div>
-                    </li>
-                {% endfor %}
-            {% endif %}
-        </ul>
-    </div>
-</div>
-<div class="{% if app.request.get('_route') != 'home' %}content{% endif %}">
+{% include '@front/_includes/navbar.html.twig' %}
+<div {% if app.request.get('_route') != 'home' %}class="content"{% endif %}>
 {% block body %}{% endblock %}
 </div>
 <div class="footer">

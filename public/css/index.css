@@ -3,9 +3,41 @@
     transition: all 0.5s;
 }
 
-.dropdown-menu a:hover {
-    background-color: #1d2124;
+#slider {
+    position: relative;
+    height: auto;
 }
+
+#slider .animated-arrow {
+    color: #ffffff;
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+    animation: animated-arrow .5s ease-in-out infinite alternate;
+}
+
+.mburger b {
+    display: block;
+    position: absolute;
+    left: calc(var(--mb-button-size) * ((1 - var(--mb-bar-width))/ 2));
+    width: calc(var(--mb-button-size) * var(--mb-bar-width));
+    height: var(--mb-bar-height);
+    border-radius: calc(var(--mb-bar-height)/ 2);
+    background: currentColor;
+    color: inherit;
+    opacity: 1;
+}
+
+@keyframes animated-arrow {
+    to {
+        padding-bottom:2rem
+    }
+}
+/*.dropdown-menu a:hover {*/
+/*    background-color: #1d2124;*/
+/*}*/
 
 .view, body, html {
     height: 100%
