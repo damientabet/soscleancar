@@ -9,6 +9,8 @@ use App\Repository\SlideRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Contracts\Cache\CacheInterface;
+use Symfony\Contracts\Cache\ItemInterface;
 
 class IndexController extends AbstractController
 {
@@ -29,13 +31,21 @@ class IndexController extends AbstractController
      * @Route("/", name="home")
      * @return Response
      */
-    public function index(): Response
+    public function index(CacheInterface $cache): Response
     {
+        $datas = $cache->get('index.datas', function () {
+            return [
+                'slides' => $this->slideRepository->findAll(),
+                'reinsurances' => $this->reinsuranceRepository->findAll(),
+                'homeBlocks' => $this->homeEditorRepository->findAll()
+            ];
+        });
+
         return $this->render('@front/index.html.twig', [
-            'slides' => $this->slideRepository->findAll(),
-            'categories' => $this->categoryRepository->findAll(),
-            'reinsurances' => $this->reinsuranceRepository->findAll(),
-            'homeBlocks' => $this->homeEditorRepository->findAll()
-        ]);
+                'categories' => $this->categoryRepository->findAll(),
+                'slides' => $datas['slides'],
+                'reinsurances' => $datas['reinsurances'],
+                'homeBlocks' => $datas['homeBlocks']
+            ]);
     }
 }

@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Routing\RouterInterface;
+use Symfony\Contracts\Cache\CacheInterface;
 
 /**
  * Class ArticleController
@@ -31,13 +32,17 @@ class ArticleController extends AbstractController
      * @param CategoryRepository $categoryRepository
      * @return Response
      */
-    public function index(Article $article, $slug, CategoryRepository $categoryRepository)
+    public function index(Article $article, $slug, CategoryRepository $categoryRepository, CacheInterface $cache)
     {
-        $this->checkSlug($article, $slug);
-        return $this->render('@front/article.html.twig',  [
-            'article' => $article,
-            'categories' => $categoryRepository->findAll(),
-        ]);
+        $datas = $cache->get('article.datas', function () use ($categoryRepository, $article, $slug) {
+            $this->checkSlug($article, $slug);
+            return [
+                'article' => $article,
+                'categories' => $categoryRepository->findAll(),
+            ];
+        });
+
+        return $this->render('@front/article.html.twig',  $datas);
     }
 
     public function checkSlug($article, $slug)

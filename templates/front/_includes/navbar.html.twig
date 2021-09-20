@@ -1,0 +1,27 @@
+<div class="navbar fixed-top navbar-dark {% if app.request.get('_route') == 'home' %}pt-lg-5 pl-lg-5{% endif %}">
+    <a href="#menu" class="mburger mburger--collapse text-white">
+        <b></b>
+        <b></b>
+        <b></b>
+        <span>Menu</span>
+    </a>
+    <nav id="menu">
+        <ul>
+            <li>
+                <a href="{{ path('home') }}">Accueil</a>
+            </li>
+            {% if categories is defined %}
+                {% for category in categories %}
+                    <li>
+                        <a href="#">{{ category.name }}</a>
+                        <ul>
+                            {% for article in category.getArticles() %}
+                                <li><a href="{{ path('article.index', {'id': article.id, 'slug': article.title}) }}">{{ article.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+            {% endif %}
+        </ul>
+    </nav>
+</div>

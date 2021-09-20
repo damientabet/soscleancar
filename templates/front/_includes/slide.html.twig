@@ -1,26 +1,31 @@
-<!-- masterslider -->
-<div class="master-slider ms-skin-default mb-5" id="masterslider">
-    <!-- new slide -->
-    {% for slide in slides %}
-        <div class="ms-slide {{ slide.textAlignment }}" data-delay="10">
-            <!-- slide background -->
-            <img src="/img/slides/{{ slide.imgName }}" data-src="/img/slides/{{ slide.imgName }}"
-                 alt="lorem ipsum dolor sit"/>
-            <!-- slide text layer -->
-            <div class="ms-layer ms-caption p-5 ms-layer-content"
-                 data-type="text" data-origin="{{ slide.containerAlignment }}"
-                 data-effect="{{ slide.containerApparaition }}(100, true)"
-                 style="color: #ffffff;">
-                <p class="text-uppercase slide-title">{{ slide.title }}</p>
-                <p class="slide-description">{{ slide.description }}</p>
-                {% if slide.buttonLink is not empty %}
-                    <a class="btn btn-primary" href="{{ slide.buttonLink }}">{{ slide.buttonTitle }}</a>
-                {% endif %}
+<section id="slider">
+    <!-- masterslider -->
+    <div class="master-slider ms-skin-default mb-5" id="masterslider">
+        <!-- new slide -->
+        {% for slide in slides %}
+            <div class="ms-slide {{ slide.textAlignment }}" data-delay="10">
+                <!-- slide background -->
+                <img src="/img/slides/{{ slide.imgName }}" data-src="/img/slides/{{ slide.imgName }}"
+                     alt="lorem ipsum dolor sit"/>
+                <!-- slide text layer -->
+                <div class="ms-layer ms-caption p-5 ms-layer-content"
+                     data-type="text" data-origin="{{ slide.containerAlignment }}"
+                     data-effect="{{ slide.containerApparaition }}(100, true)"
+                     style="color: #ffffff;">
+                    <p class="text-uppercase slide-title">{{ slide.title }}</p>
+                    <p class="slide-description">{{ slide.description }}</p>
+                    {% if slide.buttonLink is not empty %}
+                        <a class="btn btn-primary" href="{{ slide.buttonLink }}">{{ slide.buttonTitle }}</a>
+                    {% endif %}
+                </div>
+                <!-- linked slide -->
+    {#            <a href="http://codecanyon.net/user/averta">Averta</a>#}
             </div>
-            <!-- linked slide -->
-{#            <a href="http://codecanyon.net/user/averta">Averta</a>#}
-        </div>
-    {% endfor %}
-    <!-- end of slide -->
-</div>
-<!-- end of masterslider -->
+        {% endfor %}
+        <!-- end of slide -->
+    </div>
+    <a href="#main" class="animated-arrow smoothscroll px-3 py-3">
+        <i class="fas fa-chevron-down" style="font-size: 2em;"></i>
+    </a>
+    <!-- end of masterslider -->
+</section>

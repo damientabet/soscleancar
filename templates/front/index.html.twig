@@ -14,7 +14,7 @@
     {% if slides is defined and slides %}
         {% include '@front/_includes/slide.html.twig' %}
     {% endif %}
-    <div class="pb-5 text-center">
+    <div id="main" class="pb-5 text-center">
         <div class="container">
             <div class="row">
                 <div class="card-deck">
@@ -76,8 +76,7 @@
             </section>
         {% endif %}
     {% endfor %}
-    <div class="bg-dark"
-         style="background: url('/img/index/P1010342.jpg') bottom fixed; color: #ffffff; padding-top: 5%; padding-bottom: 5%">
+    <div style="background-color: #2e2e2e; color: #ffffff; padding-top: 5%; padding-bottom: 5%">
         <div class="container text-center">
             <h2 class="mb-3 text-uppercase">Nous travaillons avec les meilleurs</h2>
             <div class="row" data-aos="fade-up">

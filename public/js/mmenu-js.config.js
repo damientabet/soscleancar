@@ -4,8 +4,12 @@ document.addEventListener(
             // A collection of extension names to enable for the menu.
             extensions: [
                 "theme-dark",
-                "pagedim-black"
+                "pagedim-black",
+                "shadow-page"
             ],
+            backButton: {
+                close: true
+            },
             onClick: {
                 // whether or not the menu should close after clicking a link inside it.
                 close: true,
@@ -24,7 +28,7 @@ document.addEventListener(
                 // If set to "modal", clicking outside the menu does not close it.
                 blockUI: true,
                 // Whether or not the page should inherit the background of the body when the menu opens.
-                moveBackground: false
+                moveBackground: true
             },
             // Screen reader addon options
             screenReader: {
