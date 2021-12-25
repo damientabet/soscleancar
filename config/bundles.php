@@ -16,4 +16,7 @@ return [
     Stfalcon\Bundle\TinymceBundle\StfalconTinymceBundle::class => ['all' => true],
     Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle::class => ['all' => true],
     Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle::class => ['all' => true],
+    EasyCorp\Bundle\EasyAdminBundle\EasyAdminBundle::class => ['all' => true],
+    FOS\CKEditorBundle\FOSCKEditorBundle::class => ['all' => true],
+    CKSource\Bundle\CKFinderBundle\CKSourceCKFinderBundle::class => ['all' => true],
 ];

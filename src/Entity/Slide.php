@@ -33,7 +33,7 @@ class Slide
     private $link;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $video_link;
 
@@ -71,6 +71,11 @@ class Slide
      * @ORM\Column(type="string", length=64, nullable=true)
      */
     private $button_title;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $active;
 
     public function getId(): ?int
     {
@@ -205,6 +210,22 @@ class Slide
     public function setButtonTitle(string $button_title): self
     {
         $this->button_title = $button_title;
+
+        return $this;
+    }
+
+    public function __toString() {
+        return (string) $this->name;
+    }
+
+    public function getActive(): ?int
+    {
+        return $this->active;
+    }
+
+    public function setActive(int $active): self
+    {
+        $this->active = $active;
 
         return $this;
     }

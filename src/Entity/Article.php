@@ -118,4 +118,8 @@ class Article
     {
         return (new Slugify())->slugify($this->title);
     }
+
+    public function __toString() {
+        return (string) $this->title;
+    }
 }

@@ -1,0 +1,9 @@
+easy_admin:
+  design:
+    form_theme:
+      - '@EasyAdmin/form/bootstrap_4.html.twig'
+      - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+    assets:
+      js:
+        - '/bundles/cksourceckfinder/ckfinder/ckfinder.js'
+        - '/js/setup-ckfinder.js'

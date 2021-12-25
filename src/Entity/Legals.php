@@ -95,4 +95,8 @@ class Legals
     {
         return (new Slugify())->slugify($this->name);
     }
+
+    public function __toString() {
+        return (string) $this->name;
+    }
 }
