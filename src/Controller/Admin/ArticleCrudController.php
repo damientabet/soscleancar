@@ -66,5 +66,6 @@ class ArticleCrudController extends AbstractCrudController
     public function updateEntity(EntityManagerInterface $entityManager, $entityInstance): void
     {
         $entityInstance->setUpdatedAt(new \DateTime());
+        parent::updateEntity($entityManager, $entityInstance);
     }
 }
