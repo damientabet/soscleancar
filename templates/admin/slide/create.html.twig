@@ -1,6 +1,0 @@
-{% extends "admin/layout.html.twig" %}
-
-{% block body %}
-    {% include 'admin/_includes/toolbar.html.twig' with {'title': 'Create slide'|trans, 'listLink': path('admin.slide.list') } %}
-    {% include 'admin/slide/include/form.html.twig' with {'form': form} %}
-{% endblock %}

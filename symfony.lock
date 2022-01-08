@@ -102,6 +102,12 @@
             "ref": "b131e6cbfe1b898a508987851963fff485986285"
         }
     },
+    "edsdk/file-uploader-server-php": {
+        "version": "1.0.34"
+    },
+    "edsdk/flmngr-server-php": {
+        "version": "1.0.39"
+    },
     "egulias/email-validator": {
         "version": "2.1.22"
     },

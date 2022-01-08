@@ -32,14 +32,11 @@ class LegalsController extends AbstractController
      * @param CategoryRepository $categoryRepository
      * @return Response
      */
-    public function index(Legals $legals, CategoryRepository $categoryRepository, CacheInterface $cache): Response
+    public function index(Legals $legals, CategoryRepository $categoryRepository): Response
     {
-        $datas = $cache->get('legals.datas', function () use ($categoryRepository, $legals) {
-            return [
-                'legal' => $legals,
-                'categories' => $categoryRepository->findAll()
-            ];
-        });
-        return $this->render('@front/legals.html.twig',  $datas);
+        return $this->render('@front/legals.html.twig',  [
+            'legal' => $legals,
+            'categories' => $categoryRepository->findAll()
+        ]);
     }
 }

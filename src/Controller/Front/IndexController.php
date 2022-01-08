@@ -31,21 +31,13 @@ class IndexController extends AbstractController
      * @Route("/", name="home")
      * @return Response
      */
-    public function index(CacheInterface $cache): Response
+    public function index(): Response
     {
-        $datas = $cache->get('index.datas', function () {
-            return [
+        return $this->render('@front/index.html.twig', [
+                'categories' => $this->categoryRepository->findAll(),
                 'slides' => $this->slideRepository->findAll(),
                 'reinsurances' => $this->reinsuranceRepository->findAll(),
                 'homeBlocks' => $this->homeEditorRepository->findAll()
-            ];
-        });
-
-        return $this->render('@front/index.html.twig', [
-                'categories' => $this->categoryRepository->findAll(),
-                'slides' => $datas['slides'],
-                'reinsurances' => $datas['reinsurances'],
-                'homeBlocks' => $datas['homeBlocks']
             ]);
     }
 }

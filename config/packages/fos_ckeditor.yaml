@@ -8,5 +8,10 @@ fos_ck_editor:
   configs:
     main_config:
       toolbar: full
+      extraPlugins: N1ED-editor
+      allowedContent: true
+      apiKey: 1W0LDFLT
+      skin: n1theme
+      removePlugins: iframe
       filebrowserBrowseRoute: elfinder
       filebrowserBrowseRouteParameters: []
